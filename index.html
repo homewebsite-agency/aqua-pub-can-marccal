@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AQUA PUB a Ca’n Marçal | bar en Inca, Mallorca</title>
+<meta name="description" content="Diversión, música y buen ambiente &mdash; AQUA PUB a Ca’n Marçal, bar en Carrer des Born, 24, 07300 Inca, Illes Balears, España">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,400;0,600;1,400;1,600&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#120c07;--bg2:#1a0f0a;--bg3:#0e0805;--ac:#c4763a;--tx:#F2EBDA;--tx2:#d4c4b0;--wh:#fff;}
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--tx);}
+nav{position:fixed;top:0;width:100%;z-index:100;padding:20px 60px;display:flex;align-items:center;justify-content:space-between;background:transparent;transition:all .4s;}
+nav.scrolled{background:#120c07f5;backdrop-filter:blur(12px);box-shadow:0 1px 0 rgba(0,0,0,.1);padding:14px 60px;}
+.nav-logo{font-family:'Josefin Sans',serif;font-size:1.5rem;font-weight:600;color:var(--wh);text-decoration:none;letter-spacing:2px;transition:color .4s;}
+nav.scrolled .nav-logo{color:var(--tx);}
+.nav-links{display:flex;gap:32px;list-style:none;}
+.nav-links a{color:rgba(255,255,255,.85);text-decoration:none;font-size:.78rem;letter-spacing:2px;text-transform:uppercase;transition:color .3s;}
+nav.scrolled .nav-links a{color:var(--tx2);}
+.nav-links a:hover,nav.scrolled .nav-links a:hover{color:var(--ac);}
+.nav-cta{background:var(--ac);color:var(--wh);padding:10px 24px;font-size:.75rem;letter-spacing:2px;text-transform:uppercase;text-decoration:none;border-radius:2px;transition:opacity .3s;}
+.nav-cta:hover{opacity:.85;}
+.hero{height:100svh;position:relative;display:flex;align-items:center;justify-content:center;text-align:center;overflow:hidden;}
+.hero-bg{position:absolute;inset:0;background-image:url('https://maps.googleapis.com/maps/api/place/photo?maxwidth=1200&photoreference=Ab43m-uXidlJ3bBYkQAiawQ33T_Xq4Xkqw0yGXlmHH_YtbAEQEGdicJW_llZ7fwVELVAtqIAfNNlQM-1xHdStziHIwI0r5_BFz89m0HnbNayKOA_U-KsaEFqtBp5ncgCiYDXr5NJQM3mtNbXKt7IMEwXunnvoioz5JSS-Sbd1lMEEYKlAVlpypSalIRr_vUnyza7pdICqcY3e7POxcxz2eppXbCGPJF_n6Vw55ch7wfuSrkXdSHh1oiyD24CumkHTGvMa_csaGUlqCVqx72UsTOayQjgpyDdY439TjRYP1ITGMaFhcCe26kCcHDRz2wGJXEn1YMaYq1pr5OLEs_uJ4ONVIgQz_ziId0erPCVahmU6axgRqCSnXTSDoO2fkTNEFuHPrjqLxhhGU0blerloRtNrE55NlEX3R-ezvZhXO_pckUn5aAuv3e_2YfRPytxppNY&key=AIzaSyBgqLtAje-cCxj_n-oFD1vsiNdRpNUfNuM');background-size:cover;background-position:center;}
+.hero-overlay{position:absolute;inset:0;background:linear-gradient(to bottom,rgba(0,0,0,.55) 0%,rgba(0,0,0,.35) 50%,rgba(0,0,0,.65) 100%);}
+.hero-content{position:relative;z-index:2;max-width:800px;padding:0 20px;}
+.hero-tag{font-size:.75rem;letter-spacing:4px;text-transform:uppercase;color:rgba(255,255,255,.7);margin-bottom:20px;}
+.hero h1{font-family:'Josefin Sans',serif;font-size:clamp(3.5rem,8vw,7rem);color:var(--wh);line-height:1.05;margin-bottom:20px;}
+.hero h1 em{font-style:italic;color:rgba(255,255,255,.85);}
+.hero-tagline{font-size:.92rem;letter-spacing:3px;text-transform:uppercase;color:rgba(255,255,255,.75);margin-bottom:40px;}
+.hero-btns{display:flex;gap:16px;justify-content:center;flex-wrap:wrap;}
+.btn-primary{background:var(--ac);color:var(--wh);padding:14px 32px;text-decoration:none;font-size:.78rem;letter-spacing:2px;text-transform:uppercase;border-radius:2px;transition:opacity .3s;}
+.btn-primary:hover{opacity:.85;}
+.btn-outline{border:1px solid rgba(255,255,255,.6);color:var(--wh);padding:14px 32px;text-decoration:none;font-size:.78rem;letter-spacing:2px;text-transform:uppercase;border-radius:2px;transition:all .3s;}
+.btn-outline:hover{background:rgba(255,255,255,.1);}
+.hero-badge{position:absolute;bottom:40px;right:60px;background:rgba(255,255,255,.12);backdrop-filter:blur(12px);border:1px solid rgba(255,255,255,.2);padding:14px 20px;border-radius:8px;text-align:center;color:var(--wh);}
+.hero-badge .stars{font-size:1rem;color:#f5c842;}
+.hero-badge .rating{font-size:1.4rem;font-weight:700;}
+.hero-badge .label{font-size:.65rem;letter-spacing:2px;text-transform:uppercase;opacity:.7;}
+.stats-bar{background:var(--ac);padding:32px 60px;display:grid;grid-template-columns:repeat(4,1fr);text-align:center;}
+.stat-item{border-right:1px solid rgba(255,255,255,.2);padding:0 20px;}
+.stat-item:last-child{border-right:none;}
+.stat-num{font-family:'Josefin Sans',serif;font-size:2.4rem;font-weight:600;color:var(--wh);line-height:1;}
+.stat-label{font-size:.7rem;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,.75);margin-top:6px;}
+section{padding:100px 60px;}
+.section-tag{font-size:.7rem;letter-spacing:4px;text-transform:uppercase;color:var(--ac);margin-bottom:20px;}
+.section-h2{font-family:'Josefin Sans',serif;font-size:clamp(2rem,4vw,3rem);line-height:1.15;margin-bottom:16px;color:var(--tx);}
+.section-sub{color:var(--tx2);font-size:.85rem;letter-spacing:2px;text-transform:uppercase;margin-bottom:50px;}
+.about{background:var(--bg);}
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center;max-width:1200px;margin:0 auto;}
+.about p{color:var(--tx2);line-height:1.85;margin-bottom:20px;font-size:.95rem;}
+.rating-badge{display:inline-flex;align-items:center;gap:10px;background:var(--bg2);border:1px solid var(--bg3);padding:12px 20px;border-radius:8px;margin-top:16px;}
+.rating-badge .stars{color:#f5c842;}
+.rating-badge span{font-size:.8rem;color:var(--tx2);}
+.about-img{border-radius:12px;overflow:hidden;aspect-ratio:4/5;}
+.about-img img{width:100%;height:100%;object-fit:cover;}
+.especialidad{position:relative;min-height:70vh;display:flex;align-items:center;justify-content:center;text-align:center;overflow:hidden;padding:80px 40px;}
+.espec-bg{position:absolute;inset:0;background-image:url('https://maps.googleapis.com/maps/api/place/photo?maxwidth=1200&photoreference=Ab43m-ujIMxeIn5q40g1MZASYO3rhSxjv_Fz6RGmAuC0tP-XwSrBBBs2xBl-7l4sozEALX3JTZkTrWw3_MA-e4N9d2rM4U4KvfcZC7moD-1Mz--ZmMUCTEEBCb_wgGQ_fixpuO6AWtD35zcqeOcCIhq2RC0Ak599afFmE6f-YuKS8flOfekGOCzj2TLnRgghjYOTJhPNpeQTr7vi_bUE4ZAWPx7TmV6YWjN8cy28nRPVpK1fCURv_Bz9bPK2oYrsJ1Ov_zstnjiS6XRj-YEUANPXta_HgfIq7tiOB89MYmJETHDFv1untrx_ujAscsUXjCAIsMzCsAMsY0jCKbsrsXzSCeX9uUOAjCZB4Do4CwL6uSVOWxS9EMBSLIT0IxuRaWZg7A7cZPlbLww3XhvNy33Pzl041hiNVZDadLw9H7KNreYU_ucVIATkOoD_n4pQeXmo&key=AIzaSyBgqLtAje-cCxj_n-oFD1vsiNdRpNUfNuM');background-size:cover;background-position:center;background-attachment:fixed;}
+.espec-overlay{position:absolute;inset:0;background:rgba(0,0,0,.76);}
+.espec-content{position:relative;z-index:2;max-width:640px;}
+.espec-tag{font-size:.7rem;letter-spacing:4px;text-transform:uppercase;color:rgba(255,255,255,.6);margin-bottom:20px;}
+.espec-content h2{font-family:'Josefin Sans',serif;font-size:clamp(2.2rem,5vw,4rem);color:var(--wh);margin-bottom:20px;}
+.espec-content p{color:rgba(255,255,255,.8);line-height:1.8;margin-bottom:36px;}
+.btn-light{border:1px solid rgba(255,255,255,.6);color:var(--wh);padding:14px 36px;text-decoration:none;font-size:.78rem;letter-spacing:2px;text-transform:uppercase;border-radius:2px;transition:all .3s;}
+.btn-light:hover{background:rgba(255,255,255,.1);}
+.menu-section{background:var(--bg2);}
+.menu-inner{max-width:1200px;margin:0 auto;}
+.tabs{display:flex;justify-content:center;margin-bottom:50px;border-bottom:2px solid var(--bg3);}
+.tab-btn{background:none;border:none;padding:14px 32px;font-family:'Inter',sans-serif;font-size:.78rem;letter-spacing:2px;text-transform:uppercase;cursor:pointer;color:var(--tx2);border-bottom:2px solid transparent;margin-bottom:-2px;transition:all .3s;}
+.tab-btn.active{color:var(--ac);border-bottom-color:var(--ac);}
+.tab-content{display:none;}
+.tab-content.active{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
+.dish-card{background:var(--bg);border-radius:10px;padding:22px 24px;display:flex;flex-direction:column;gap:8px;box-shadow:0 2px 12px rgba(0,0,0,.06);transition:transform .3s,box-shadow .3s;}
+.dish-card:hover{transform:translateY(-3px);box-shadow:0 8px 24px rgba(0,0,0,.12);}
+.dish-header{display:flex;justify-content:space-between;align-items:flex-start;gap:16px;}
+.dish-name{font-size:.95rem;font-weight:600;letter-spacing:.5px;color:var(--tx);}
+.dish-price{background:var(--ac);color:var(--wh);padding:4px 12px;border-radius:20px;font-size:.78rem;font-weight:600;white-space:nowrap;flex-shrink:0;}
+.dish-desc{color:var(--tx2);font-size:.82rem;line-height:1.65;}
+.why{background:var(--bg);}
+.why-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:32px;max-width:1100px;margin:0 auto;}
+.why-card{background:var(--bg2);border-radius:12px;padding:40px 32px;text-align:center;box-shadow:0 2px 16px rgba(0,0,0,.06);}
+.why-icon{width:52px;height:52px;margin:0 auto 20px;color:var(--ac);}
+.why-card h3{font-family:'Josefin Sans',serif;font-size:1.4rem;margin-bottom:14px;color:var(--tx);}
+.why-card p{color:var(--tx2);font-size:.85rem;line-height:1.8;}
+.gallery{background:var(--bg2);}
+.gallery-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;max-width:1200px;margin:0 auto;}
+.gallery-item{aspect-ratio:4/3;border-radius:10px;overflow:hidden;position:relative;cursor:pointer;}
+.gallery-item img{width:100%;height:100%;object-fit:cover;transition:transform .5s;}
+.gallery-item:nth-child(2) img{filter:saturate(1.4);}
+.gallery-item:nth-child(3) img{filter:brightness(1.15);}
+.gallery-item:nth-child(4) img{filter:contrast(1.1);}
+.gallery-item:nth-child(5) img{filter:sepia(.2);}
+.gallery-item:nth-child(6) img{filter:hue-rotate(5deg) saturate(1.2);}
+.gallery-item:hover img{transform:scale(1.06);}
+.gallery-item .ov{position:absolute;inset:0;background:rgba(0,0,0,.4);opacity:0;transition:opacity .3s;display:flex;align-items:center;justify-content:center;}
+.gallery-item:hover .ov{opacity:1;}
+.gallery-item .ov span{color:var(--wh);font-size:.75rem;letter-spacing:2px;text-transform:uppercase;}
+.testimonials{background:var(--bg);}
+.test-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:24px;max-width:1100px;margin:0 auto;}
+.test-card{background:var(--bg2);border-radius:12px;padding:36px;position:relative;box-shadow:0 2px 16px rgba(0,0,0,.06);}
+.test-quote{font-family:Georgia,serif;font-size:5rem;line-height:.8;color:var(--ac);opacity:.3;position:absolute;top:20px;left:28px;}
+.test-text{color:var(--tx);line-height:1.8;font-size:.9rem;margin-bottom:20px;padding-top:20px;font-style:italic;}
+.test-footer{display:flex;align-items:center;justify-content:space-between;}
+.test-author{font-weight:600;font-size:.85rem;color:var(--tx);}
+.test-meta{font-size:.72rem;color:var(--tx2);margin-top:2px;}
+.test-stars{color:#f5c842;font-size:1rem;}
+.contact{background:var(--bg2);}
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;max-width:1100px;margin:0 auto;}
+.contact-info{display:flex;flex-direction:column;gap:24px;}
+.contact-row{display:flex;align-items:flex-start;gap:16px;}
+.contact-icon{width:40px;height:40px;background:var(--ac);border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+.contact-icon svg{width:18px;height:18px;stroke:var(--wh);fill:none;}
+.contact-row h4{font-size:.75rem;letter-spacing:2px;text-transform:uppercase;color:var(--ac);margin-bottom:4px;}
+.contact-row p,.contact-row a{color:var(--tx);font-size:.9rem;line-height:1.6;text-decoration:none;}
+.horario-table{width:100%;border-collapse:collapse;margin-top:8px;}
+.horario-table td{padding:6px 0;font-size:.85rem;color:var(--tx2);border-bottom:1px solid var(--bg3);}
+.horario-table td:first-child{font-weight:600;color:var(--tx);width:40%;}
+.whatsapp-btn{display:flex;align-items:center;gap:12px;background:#25D366;color:#fff;padding:16px 28px;border-radius:8px;text-decoration:none;font-size:.85rem;font-weight:600;margin-top:8px;transition:background .3s;}
+.whatsapp-btn:hover{background:#1da851;}
+.whatsapp-btn svg{width:22px;height:22px;fill:#fff;flex-shrink:0;}
+.map-frame{border-radius:12px;overflow:hidden;height:100%;min-height:380px;}
+.map-frame iframe{width:100%;height:100%;border:none;}
+footer{background:#0d0a09;color:rgba(250,246,240,.8);padding:60px;}
+.footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr;gap:60px;max-width:1200px;margin:0 auto;}
+.footer-brand h3{font-family:'Josefin Sans',serif;font-size:1.8rem;color:#fff;margin-bottom:14px;}
+.footer-brand p{font-size:.85rem;line-height:1.8;color:rgba(250,246,240,.6);max-width:320px;}
+.footer-col h4{font-size:.72rem;letter-spacing:3px;text-transform:uppercase;color:rgba(250,246,240,.45);margin-bottom:20px;}
+.footer-col ul{list-style:none;display:flex;flex-direction:column;gap:10px;}
+.footer-col a{color:rgba(250,246,240,.65);text-decoration:none;font-size:.85rem;transition:color .3s;}
+.footer-col a:hover{color:#fff;}
+.footer-bottom{max-width:1200px;margin:40px auto 0;padding-top:24px;border-top:1px solid rgba(255,255,255,.1);display:flex;justify-content:space-between;font-size:.75rem;color:rgba(250,246,240,.4);}
+.footer-bottom a{color:rgba(250,246,240,.55);text-decoration:none;}
+.wa-float{position:fixed;bottom:30px;right:30px;z-index:999;width:56px;height:56px;background:#25D366;border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 20px rgba(37,211,102,.4);text-decoration:none;transition:transform .3s;}
+.wa-float:hover{transform:scale(1.1);}
+.wa-float svg{width:28px;height:28px;fill:#fff;}
+.reveal{opacity:0;transform:translateY(28px);transition:opacity .7s ease,transform .7s ease;}
+.reveal.visible{opacity:1;transform:none;}
+@media(max-width:768px){
+  nav{padding:16px 24px;}
+  nav.scrolled{padding:12px 24px;}
+  .nav-links{display:none;}
+  section{padding:70px 24px;}
+  .about-grid,.contact-grid{grid-template-columns:1fr;}
+  .stats-bar{grid-template-columns:repeat(2,1fr);gap:20px;padding:32px 24px;}
+  .stat-item{border-right:none;border-bottom:1px solid rgba(255,255,255,.2);padding-bottom:16px;}
+  .why-grid{grid-template-columns:1fr;}
+  .gallery-grid{grid-template-columns:repeat(2,1fr);}
+  .test-grid{grid-template-columns:1fr;}
+  .footer-grid{grid-template-columns:1fr;gap:32px;}
+  .tab-content.active{grid-template-columns:1fr;}
+  .hero-badge{bottom:20px;right:20px;}
+}
+</style>
+</head>
+<body>
+
+<nav id="navbar">
+  <a href="#hero" class="nav-logo">AQUA PUB a Ca’n Marçal</a>
+  <ul class="nav-links">
+    <li><a href="#about">Nosotros</a></li>
+    <li><a href="#menu">Carta</a></li>
+    <li><a href="#gallery">Galer&iacute;a</a></li>
+    <li><a href="#testimonials">Opiniones</a></li>
+    <li><a href="#contact">Contacto</a></li>
+  </ul>
+  <a href="https://wa.me/639564709" class="nav-cta" target="_blank" rel="noopener">Reservar</a>
+</nav>
+
+<section class="hero" id="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <p class="hero-tag">bar &middot; Inca, Mallorca</p>
+    <h1>AQUA PUB a Ca’n Marçal<br><em>Diversión, música y buen ambiente</em></h1>
+    <p class="hero-tagline">Cócteles Signature AQUA</p>
+    <div class="hero-btns">
+      <a href="#menu" class="btn-primary">Ver la carta</a>
+      <a href="#contact" class="btn-outline">C&oacute;mo llegar</a>
+    </div>
+  </div>
+  <div class="hero-badge">
+    <div class="stars">★★★★☆</div>
+    <div class="rating">4.3 / 5</div>
+    <div class="label">Google Reviews</div>
+  </div>
+</section>
+
+<div class="stats-bar">
+  <div class="stat-item">
+    <div class="stat-num">4.3&#9733;</div>
+    <div class="stat-label">Google Reviews</div>
+  </div>
+  <div class="stat-item">
+    <div class="stat-num">18+</div>
+    <div class="stat-label">Platos en carta</div>
+  </div>
+  <div class="stat-item">
+    <div class="stat-num">Inca, Mallorca</div>
+    <div class="stat-label">Ubicaci&oacute;n</div>
+  </div>
+  <div class="stat-item">
+    <div class="stat-num">100%</div>
+    <div class="stat-label">Producto fresco</div>
+  </div>
+</div>
+
+<section class="about" id="about">
+  <div class="about-grid">
+    <div class="reveal">
+      <p class="section-tag">Nuestra historia</p>
+      <h2 class="section-h2">AQUA PUB a Ca’n Marçal</h2>
+      <p>AQUA PUB a Ca'n Marçal es un establecimiento joven y dinámico ubicado en el corazón de Mallorca, donde la música agradable y el ambiente perfecto crean el escenario ideal para disfrutar con amigos. Desde sus orígenes, se ha caracterizado por ofrecer un espacio acogedor donde la calidad del servicio y el trato humano son prioritarios. El equipo, especialmente figuras como Ruso, se dedica a hacer que cada cliente se sienta valorado y especial.</p>
+      <p>Creemos en la importancia de crear espacios seguros y respetuosos donde todos puedan disfrutar de una noche memorable. Nuestro compromiso es mejorar constantemente, escuchar a nuestros clientes y mantener un ambiente de respeto mutuo entre todas las personas.</p>
+      <p>Un bar moderno con música agradable y ambiente perfecto para pasar un rato distendido con amigos en cualquier momento del fin de semana. El espacio ha mejorado significativamente, manteniendo precios aceptables y una atmósfera joven y vibrante.</p>
+      <div class="rating-badge">
+        <span class="stars">★★★★☆</span>
+        <span><strong>4.3 / 5</strong> en Google &middot; Valorado por cientos de clientes</span>
+      </div>
+    </div>
+    <div class="about-img reveal">
+      <img src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=1200&photoreference=Ab43m-v2ReCmtTP8IsqHDpFoJ8zmvuOdpomocMKJ7SjSiRGoK-d5O8lZAGbLGtw7Wi_1F-7N16Gi0wB99wr1kmJTujbHa5nMbrhaN6-iQscgnUcAzppPmTxtrmipx8v2qrjoTQKHXycAxvCEXpsmS75GfwUTnmbAp-St1rTprexuRH9AxaGXZIm2WBR9q2aaKmkfpwd8V2IaSG820u_su5yzI2kthn7wqLro9dFe6uMEV_lXQO6e71mzLQt47_aZ0oVgFJNFOnljpu5loGiVPgnZGvjkcnpf6yoylOTipQOR1_ZxWADcq1qoBjwoasYP5Dg4iBPa6lxlO0wGcedb8izIavhcVVLXHhmsOBlSa_TDkSQdi7_N8O1luAP3ihOxGtCliR2iuHEg1RJFw6g2-195oAPg5vQimrVl6XLYFH0iGRpat_2LX-ivKqKnaD8QNEAE&key=AIzaSyBgqLtAje-cCxj_n-oFD1vsiNdRpNUfNuM" alt="AQUA PUB a Ca’n Marçal" loading="lazy">
+    </div>
+  </div>
+</section>
+
+<div class="especialidad">
+  <div class="espec-bg"></div>
+  <div class="espec-overlay"></div>
+  <div class="espec-content reveal">
+    <p class="espec-tag">Nuestra especialidad</p>
+    <h2>Cócteles Signature AQUA</h2>
+    <p>Nuestros cócteles estrella combinan ingredientes premium con técnicas modernas de mixología. Cada bebida es elaborada con precisión por nuestro equipo experto, ofreciendo una experiencia única que refleja la esencia de AQUA PUB.</p>
+    <a href="#menu" class="btn-light">Ver carta completa</a>
+  </div>
+</div>
+
+<section class="menu-section" id="menu">
+  <div class="menu-inner">
+    <p class="section-tag" style="text-align:center">Nuestra carta</p>
+    <h2 class="section-h2" style="text-align:center">Lo mejor de nuestra cocina</h2>
+    <p class="section-sub" style="text-align:center">Productos frescos, recetas con alma</p>
+    <div class="tabs">
+      <button class="tab-btn active" onclick="showTab('t1',this)">Bebidas Alcohólicas</button>
+      <button class="tab-btn" onclick="showTab('t2',this)">Bebidas Sin Alcohol</button>
+      <button class="tab-btn" onclick="showTab('t3',this)">Tapas y Aperitivos</button>
+    </div>
+    <div id="tab-t1" class="tab-content active">
+      <div class="dish-card"><div class="dish-header"><span class="dish-name">Mojito Clásico</span><span class="dish-price">8€</span></div><p class="dish-desc">Refrescante combinación de ron blanco, menta fresca, lima, azúcar y soda con hielo natural</p></div>
+      <div class="dish-card"><div class="dish-header"><span class="dish-name">Margarita Premium</span><span class="dish-price">9€</span></div><p class="dish-desc">Tequila de calidad, triple sec y jugo de limón fresco, servido en vaso con borde salado</p></div>
+      <div class="dish-card"><div class="dish-header"><span class="dish-name">Piña Colada</span><span class="dish-price">8€</span></div><p class="dish-desc">Ron blanco, crema de coco y jugo de piña natural, una bebida tropical y cremosa perfecta</p></div>
+      <div class="dish-card"><div class="dish-header"><span class="dish-name">Cosmopolitan</span><span class="dish-price">9€</span></div><p class="dish-desc">Vodka premium, triple sec, jugo de arándano y lima fresca en una presentación elegante</p></div>
+      <div class="dish-card"><div class="dish-header"><span class="dish-name">Long Island Ice Tea</span><span class="dish-price">12€</span></div><p class="dish-desc">Potente mezcla de ron, vodka, tequila, triple sec y ginebra con jugo de limón y azúcar</p></div>
+      <div class="dish-card"><div class="dish-header"><span class="dish-name">Cerveza Premium</span><span class="dish-price">5€</span></div><p class="dish-desc">Selección de cervezas importadas y nacionales de calidad, servidas a temperatura óptima</p></div>
+    </div>
+    <div id="tab-t2" class="tab-content">
+      <div class="dish-card"><div class="dish-header"><span class="dish-name">Agua Fresca de Sandía</span><span class="dish-price">4€</span></div><p class="dish-desc">Bebida refrescante elaborada con sandía natural, limón y hielo, perfecta para días calurosos</p></div>
+      <div class="dish-card"><div class="dish-header"><span class="dish-name">Zumo de Naranja Recién Exprimido</span><span class="dish-price">4€</span></div><p class="dish-desc">Jugo natural de naranjas frescas, sin azúcares añadidos, vitaminado y delicioso</p></div>
+      <div class="dish-card"><div class="dish-header"><span class="dish-name">Refresco Coca-Cola</span><span class="dish-price">3€</span></div><p class="dish-desc">Bebida refrescante clásica, servida con hielo abundante y limón fresco al gusto</p></div>
+      <div class="dish-card"><div class="dish-header"><span class="dish-name">Agua Mineral</span><span class="dish-price">2€</span></div><p class="dish-desc">Agua mineral de manantial, disponible con o sin gas, para mantenerte hidratado</p></div>
+      <div class="dish-card"><div class="dish-header"><span class="dish-name">Limonada Casera</span><span class="dish-price">4€</span></div><p class="dish-desc">Refrescante limonada elaborada con limones frescos, agua mineral y azúcar natural</p></div>
+      <div class="dish-card"><div class="dish-header"><span class="dish-name">Café Espresso</span><span class="dish-price">2€</span></div><p class="dish-desc">Café italiano de calidad, extraído en máquina profesional con crema perfecta</p></div>
+    </div>
+    <div id="tab-t3" class="tab-content">
+      <div class="dish-card"><div class="dish-header"><span class="dish-name">Tabla de Quesos y Embutidos</span><span class="dish-price">12€</span></div><p class="dish-desc">Selección variada de quesos artesanales mallorquines y embutidos ibéricos de calidad premium</p></div>
+      <div class="dish-card"><div class="dish-header"><span class="dish-name">Aceitunas Mallorquinas</span><span class="dish-price">5€</span></div><p class="dish-desc">Olivas verdes y negras frescas, aliñadas con hierbas aromáticas y aceite de oliva virgen</p></div>
+      <div class="dish-card"><div class="dish-header"><span class="dish-name">Patatas Bravas</span><span class="dish-price">6€</span></div><p class="dish-desc">Papas fritas crujientes acompañadas de salsa brava picante y mayonesa casera</p></div>
+      <div class="dish-card"><div class="dish-header"><span class="dish-name">Camarones al Ajillo</span><span class="dish-price">10€</span></div><p class="dish-desc">Camarones frescos salteados con ajo, aceite de oliva y un toque de limón natural</p></div>
+      <div class="dish-card"><div class="dish-header"><span class="dish-name">Tabla de Jamón Serrano</span><span class="dish-price">14€</span></div><p class="dish-desc">Jamón ibérico cortado en láminas finas, acompañado de pan tostado y aceite virgen</p></div>
+      <div class="dish-card"><div class="dish-header"><span class="dish-name">Croquetas Variadas</span><span class="dish-price">7€</span></div><p class="dish-desc">Croquetas caseras de jamón, queso y setas, doradas y crujientes por fuera, cremosas dentro</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="why">
+  <p class="section-tag" style="text-align:center">Nuestros valores</p>
+  <h2 class="section-h2" style="text-align:center">&iquest;Por qu&eacute; elegirnos?</h2>
+  <p class="section-sub" style="text-align:center">Lo que nos hace &uacute;nicos</p>
+  <div class="why-grid">
+    <div class="why-card reveal"><div class="why-icon"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M11.48 3.499a.562.562 0 011.04 0l2.125 5.111a.563.563 0 00.475.345l5.518.442c.499.04.701.663.321.988l-4.204 3.602a.563.563 0 00-.182.557l1.285 5.385a.562.562 0 01-.84.61l-4.725-2.885a.563.563 0 00-.586 0L6.982 20.54a.562.562 0 01-.84-.61l1.285-5.386a.562.562 0 00-.182-.557l-4.204-3.602a.562.562 0 01.321-.988l5.518-.442a.563.563 0 00.475-.345L11.48 3.5z"/></svg></div><h3>Servicio excepcional y personal atento</h3><p>Nuestro equipo, encabezado por profesionales como Ruso, proporciona un trato inmejorable y respetuoso. Cada miembro del equipo está comprometido con hacer que tu experiencia sea memorable desde el primer momento de llegada.</p></div>
+    <div class="why-card reveal"><div class="why-icon"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M11.645 20.91l-.007-.003-.022-.012a15.247 15.247 0 01-.383-.218 25.18 25.18 0 01-4.244-3.17C4.688 15.36 2.25 12.174 2.25 8.25 2.25 5.322 4.714 3 7.688 3A5.5 5.5 0 0112 5.052 5.5 5.5 0 0116.313 3c2.973 0 5.437 2.322 5.437 5.25 0 3.925-2.438 7.111-4.739 9.256a25.175 25.175 0 01-4.244 3.17 15.247 15.247 0 01-.383.219l-.022.012-.007.004-.003.001a.752.752 0 01-.704 0l-.003-.001z"/></svg></div><h3>Ambiente musical y atmósfera perfecta</h3><p>Disfrutamos de música agradable cuidadosamente seleccionada que crea un ambiente distendido y acogedor. El espacio ha mejorado significativamente en decoración y comodidad, siendo ideal para disfrutar con amigos.</p></div>
+    <div class="why-card reveal"><div class="why-icon"><svg viewBox="0 0 24 24" fill="currentColor"><path fill-rule="evenodd" d="M12.963 2.286a.75.75 0 00-1.071-.136 9.742 9.742 0 00-3.539 6.177A7.547 7.547 0 016.648 6.61a.75.75 0 00-1.152-.082A9 9 0 1015.68 4.534a7.46 7.46 0 01-2.717-2.248zM15.75 14.25a3.75 3.75 0 11-7.313-1.172c.628.465 1.35.81 2.133 1a5.99 5.99 0 011.925-3.545 3.75 3.75 0 013.255 3.717z" clip-rule="evenodd"/></svg></div><h3>Precios justos y accesibles</h3><p>Mantenemos precios aceptables y coherentes con la calidad del servicio ofrecido. Un consumo de siete euros refleja nuestra filosofía de ofrecer entretenimiento de calidad sin perjudicar el bolsillo de nuestros clientes.</p></div>
+  </div>
+</section>
+
+<section class="gallery" id="gallery">
+  <p class="section-tag" style="text-align:center">Nuestros momentos</p>
+  <h2 class="section-h2" style="text-align:center">Galer&iacute;a</h2>
+  <p class="section-sub" style="text-align:center">Im&aacute;genes de AQUA PUB a Ca’n Marçal</p>
+  <div class="gallery-grid">
+    <div class="gallery-item"><img src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=1200&photoreference=Ab43m-uXidlJ3bBYkQAiawQ33T_Xq4Xkqw0yGXlmHH_YtbAEQEGdicJW_llZ7fwVELVAtqIAfNNlQM-1xHdStziHIwI0r5_BFz89m0HnbNayKOA_U-KsaEFqtBp5ncgCiYDXr5NJQM3mtNbXKt7IMEwXunnvoioz5JSS-Sbd1lMEEYKlAVlpypSalIRr_vUnyza7pdICqcY3e7POxcxz2eppXbCGPJF_n6Vw55ch7wfuSrkXdSHh1oiyD24CumkHTGvMa_csaGUlqCVqx72UsTOayQjgpyDdY439TjRYP1ITGMaFhcCe26kCcHDRz2wGJXEn1YMaYq1pr5OLEs_uJ4ONVIgQz_ziId0erPCVahmU6axgRqCSnXTSDoO2fkTNEFuHPrjqLxhhGU0blerloRtNrE55NlEX3R-ezvZhXO_pckUn5aAuv3e_2YfRPytxppNY&key=AIzaSyBgqLtAje-cCxj_n-oFD1vsiNdRpNUfNuM" alt="AQUA PUB a Ca’n Marçal" loading="lazy"><div class="ov"><span>Ver foto</span></div></div>
+    <div class="gallery-item"><img src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=1200&photoreference=Ab43m-v2ReCmtTP8IsqHDpFoJ8zmvuOdpomocMKJ7SjSiRGoK-d5O8lZAGbLGtw7Wi_1F-7N16Gi0wB99wr1kmJTujbHa5nMbrhaN6-iQscgnUcAzppPmTxtrmipx8v2qrjoTQKHXycAxvCEXpsmS75GfwUTnmbAp-St1rTprexuRH9AxaGXZIm2WBR9q2aaKmkfpwd8V2IaSG820u_su5yzI2kthn7wqLro9dFe6uMEV_lXQO6e71mzLQt47_aZ0oVgFJNFOnljpu5loGiVPgnZGvjkcnpf6yoylOTipQOR1_ZxWADcq1qoBjwoasYP5Dg4iBPa6lxlO0wGcedb8izIavhcVVLXHhmsOBlSa_TDkSQdi7_N8O1luAP3ihOxGtCliR2iuHEg1RJFw6g2-195oAPg5vQimrVl6XLYFH0iGRpat_2LX-ivKqKnaD8QNEAE&key=AIzaSyBgqLtAje-cCxj_n-oFD1vsiNdRpNUfNuM" alt="AQUA PUB a Ca’n Marçal" loading="lazy"><div class="ov"><span>Ver foto</span></div></div>
+    <div class="gallery-item"><img src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=1200&photoreference=Ab43m-ujIMxeIn5q40g1MZASYO3rhSxjv_Fz6RGmAuC0tP-XwSrBBBs2xBl-7l4sozEALX3JTZkTrWw3_MA-e4N9d2rM4U4KvfcZC7moD-1Mz--ZmMUCTEEBCb_wgGQ_fixpuO6AWtD35zcqeOcCIhq2RC0Ak599afFmE6f-YuKS8flOfekGOCzj2TLnRgghjYOTJhPNpeQTr7vi_bUE4ZAWPx7TmV6YWjN8cy28nRPVpK1fCURv_Bz9bPK2oYrsJ1Ov_zstnjiS6XRj-YEUANPXta_HgfIq7tiOB89MYmJETHDFv1untrx_ujAscsUXjCAIsMzCsAMsY0jCKbsrsXzSCeX9uUOAjCZB4Do4CwL6uSVOWxS9EMBSLIT0IxuRaWZg7A7cZPlbLww3XhvNy33Pzl041hiNVZDadLw9H7KNreYU_ucVIATkOoD_n4pQeXmo&key=AIzaSyBgqLtAje-cCxj_n-oFD1vsiNdRpNUfNuM" alt="AQUA PUB a Ca’n Marçal" loading="lazy"><div class="ov"><span>Ver foto</span></div></div>
+    <div class="gallery-item"><img src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=1200&photoreference=Ab43m-u2zql2UnsFstiMux24VuTX92TGoeXpj6YZ6O7zKjLlbGacz2aTGu0dOKR5DVYvr9AWRdLGEx8eQ7BXhLcE8EocCDCNWtcJUS7FwawUvaLYpgL72J_nVANVDMT41OIM1aXJBfUCi5yWnrn_rTcvqMwBvVbLKGrzgej3T_E7zeCLsMaGpp39FyjHsPUD_xsQL-odEkE24bTJDsdcnQBTvzWklfWFtTm2TA83RDhXH-T1XESGm78T6YF6DSw0l8S5Uw0YhDMeI0zkGs2Khr4Y7GaKh7ewGDiLvR5D6kzCwyultPS8NmPSSMtoGGh7-XJ7O9Ixb_JaCDb5_aIozxBhsK7NZflL5mFIeEm1ErNtczhGYZkhgOwXQGOcWhCykx4BUaTtihg2sfDLvIkAri2tMwxZ2cnwOx2aYA5xnyTov16skFoXoVU227r9e8cHAagL&key=AIzaSyBgqLtAje-cCxj_n-oFD1vsiNdRpNUfNuM" alt="AQUA PUB a Ca’n Marçal" loading="lazy"><div class="ov"><span>Ver foto</span></div></div>
+    <div class="gallery-item"><img src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=1200&photoreference=Ab43m-tUdgGau8MVVfkcakSx3OaiGJ61N34SLCfFbIZt5VrSHGJX7sGZH5FuGn4s2qcrFPUv5Agf1khfL7N8wHOsmcED8Ys9r2F09aNBXDP6ansfIzdHAODobf2JNmHachzce8kIhlr1dI0mRJyn2Ejrnj6SG4WrHrX5r07k1VaQWtqBLlJZb4ds8NWXJA2TgCLTbRv5Jx3fr3HuivG3wBqMMQp9Px639gkhQzKDmkGxpAb2RkprtA7cD4FPH3o9NAuYSMQHIOdeGklDiVvHiufBN2RAl2Wo_G8kVhCQcaW6Bv3p72ncGgBh2PQFm_L70SJ5ER174ChLGiM5G0RNakHYV-Hr2iGKJsJMxR2RCrHhES1ezHAvMVACd1cluboecSk-iNGfoJBKSe0_McaXN5smnCby30rbRVn5QwUOqxDjYym9IpHK5rqgy_Hc3x6YflBz&key=AIzaSyBgqLtAje-cCxj_n-oFD1vsiNdRpNUfNuM" alt="AQUA PUB a Ca’n Marçal" loading="lazy"><div class="ov"><span>Ver foto</span></div></div>
+    <div class="gallery-item"><img src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=1200&photoreference=Ab43m-vaem6F564_4UsMzPzFwnxrApf5Ni8amorvPLVRPo12CI4Nley9ZQFq6koHKMjmdSZF2MpMGqcwaoqnTcNLcPoVmxJSvkSvgvDCTFKfOOtJq-VzTIy-Ijnip4RRv3Q92amQAGQKZ98nuWkq9aRO4yfPBTNbNNek1Q4uhyBgn2M-ze3S8Wa-xGKRaWzdAAVxSPxB61UkzI3xW5FBzJZR7lnQAEJXCc6E95MaMxe0fMH7Gu6IFYObm5sCKpS0eR3yEBIX-sfqT2Q3OG3ztB3_-OQ9xjiTdZUAnEWE5Gk3HXp9YgHHN9tEsDSszHFbKivmOGVosjyi0pBmljxhBOxAXx3D75WQIbeTp_5z1bUAK4A6SIHBc9t6Oi-hikMivGfPmEk0drNN2tNngAG9gXNE7mqbCRkXOtdgG8_X2gj7C8MGCgnmKzniyZe60vXV2SSL&key=AIzaSyBgqLtAje-cCxj_n-oFD1vsiNdRpNUfNuM" alt="AQUA PUB a Ca’n Marçal" loading="lazy"><div class="ov"><span>Ver foto</span></div></div>
+  </div>
+</section>
+
+<section class="testimonials" id="testimonials">
+  <p class="section-tag" style="text-align:center">Lo que dicen</p>
+  <h2 class="section-h2" style="text-align:center">Opiniones de nuestros clientes</h2>
+  <p class="section-sub" style="text-align:center">Rese&ntilde;as reales de Google</p>
+  <div class="test-grid">
+    <div class="test-card"><div class="test-quote">&ldquo;</div><p class="test-text">Ruso el portero es buena gente de cojones!! trato inmejorable!! Nos trato  súper bien desde primera hora, y es un chico muy gracioso y humilde! Y para el dueño; porfavor súbele el sueldo a ruso es el mejor él tendría que ser el gerente es muy respetuoso y tierno!!! RUSO SON UN GR</p><div class="test-footer"><div><div class="test-author">Bilel E.</div><div class="test-meta">&#8212; v&iacute;a Google</div></div><div class="test-stars">★★★★★</div></div></div>
+    <div class="test-card"><div class="test-quote">&ldquo;</div><p class="test-text">Música agradable ambiente perfecto y precios aceptables.</p><div class="test-footer"><div><div class="test-author">José R.</div><div class="test-meta">&#8212; v&iacute;a Google</div></div><div class="test-stars">★★★★★</div></div></div>
+    <div class="test-card"><div class="test-quote">&ldquo;</div><p class="test-text">Mejoró mucho, y la verdad pues me gusta ir con amig@s y esta muy bien  ! Pero hay muchos hombres adultos por no decir viejos que morbosean demasiado a las chicas y tendrían que hacer algo con eso ! El problema son más los hombres marroquínes que morbosean mucho a las chicas .😠  </p><div class="test-footer"><div><div class="test-author">Yadii A.</div><div class="test-meta">&#8212; v&iacute;a Google</div></div><div class="test-stars">★★★☆☆</div></div></div>
+    <div class="test-card"><div class="test-quote">&ldquo;</div><p class="test-text">Erámos un grupillo de chavales de 20 años que íbamos tranquilos a pasarlo bien un sábado a la una. De rebote terminamos en este sitio porque los demás estaban llenos. Nos tuvieron esperando fuera, luego en la entresala. Cuando pagamos la consumición (7 euros) el de la entrada nos</p><div class="test-footer"><div><div class="test-author">NOELIA L.</div><div class="test-meta">&#8212; v&iacute;a Google</div></div><div class="test-stars">★☆☆☆☆</div></div></div>
+  </div>
+</section>
+
+<section class="contact" id="contact">
+  <p class="section-tag" style="text-align:center">Encu&eacute;ntranos</p>
+  <h2 class="section-h2" style="text-align:center">Ven a visitarnos</h2>
+  <p class="section-sub" style="text-align:center">Estamos esperando</p>
+  <div class="contact-grid">
+    <div class="contact-info">
+      <div class="contact-row">
+        <div class="contact-icon"><svg viewBox="0 0 24 24" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z"/><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z"/></svg></div>
+        <div><h4>Direcci&oacute;n</h4><p>Carrer des Born, 24, 07300 Inca, Illes Balears, España</p></div>
+      </div>
+      <div class="contact-row"><div class="contact-icon"><svg viewBox="0 0 24 24" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 01-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 00-1.091-.852H4.5A2.25 2.25 0 002.25 6.75z"/></svg></div><div><h4>Tel&eacute;fono</h4><p><a href="tel:639564709">639 56 47 09</a></p></div></div>
+      <div class="contact-row">
+        <div class="contact-icon"><svg viewBox="0 0 24 24" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z"/></svg></div>
+        <div>
+          <h4>Horarios</h4>
+          <table class="horario-table"><tbody><tr><td>Lunes</td><td>Cerrado</td></tr><tr><td>Martes</td><td>8:00–14:00</td></tr><tr><td>Miércoles</td><td>8:00–14:00</td></tr><tr><td>Jueves</td><td>8:00–14:00</td></tr><tr><td>Viernes</td><td>8:00–14:00, 23:30–4:00</td></tr><tr><td>Sábado</td><td>8:00–14:00, 23:30–4:00</td></tr><tr><td>Domingo</td><td>Cerrado</td></tr></tbody></table>
+        </div>
+      </div>
+      <a href="https://wa.me/639564709" class="whatsapp-btn" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg> Contactar por WhatsApp</a>
+    </div>
+    <div class="map-frame">
+      <iframe src="https://maps.google.com/maps?q=AQUA%20PUB%20a%20Ca%E2%80%99n%20Mar%C3%A7al%2C%20Carrer%20des%20Born%2C%2024%2C%2007300%20Inca%2C%20Illes%20Balears%2C%20Espa%C3%B1a&amp;output=embed&amp;hl=es" allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Mapa AQUA PUB a Ca’n Marçal"></iframe>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <h3>AQUA PUB a Ca’n Marçal</h3>
+      <p>Diversión, música y buen ambiente. bar en Inca, Mallorca &mdash; Carrer des Born, 24, 07300 Inca, Illes Balears, España.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Navegaci&oacute;n</h4>
+      <ul>
+        <li><a href="#about">Nosotros</a></li>
+        <li><a href="#menu">Carta</a></li>
+        <li><a href="#gallery">Galer&iacute;a</a></li>
+        <li><a href="#testimonials">Opiniones</a></li>
+        <li><a href="#contact">Contacto</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Contacto</h4>
+      <ul>
+        <li><a href="tel:639564709">639 56 47 09</a></li>
+        <li><a href="https://wa.me/639564709" target="_blank" rel="noopener">WhatsApp</a></li>
+        <li><a href="#contact">C&oacute;mo llegar</a></li>
+        <li><a href="#contact">Horarios</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>&copy; 2025 AQUA PUB a Ca’n Marçal &middot; Inca, Mallorca</span>
+    <a href="https://homewebsite.es" target="_blank" rel="noopener">Sitio web por homewebsite.es</a>
+  </div>
+</footer>
+
+<a href="https://wa.me/639564709" class="wa-float" target="_blank" rel="noopener" aria-label="WhatsApp"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg></a>
+
+<script>
+(function(){
+  'use strict';
+  var nav = document.getElementById('navbar');
+  window.addEventListener('scroll', function() {
+    nav.classList.toggle('scrolled', window.scrollY > 60);
+  });
+  window.showTab = function(id, btn) {
+    document.querySelectorAll('.tab-content').forEach(function(t) { t.classList.remove('active'); });
+    document.querySelectorAll('.tab-btn').forEach(function(b) { b.classList.remove('active'); });
+    document.getElementById('tab-' + id).classList.add('active');
+    btn.classList.add('active');
+  };
+  var obs = new IntersectionObserver(function(entries) {
+    entries.forEach(function(e) {
+      if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); }
+    });
+  }, { threshold: 0.05 });
+  document.querySelectorAll('.reveal').forEach(function(el) { obs.observe(el); });
+  setTimeout(function() {
+    document.querySelectorAll('.reveal').forEach(function(el) { el.classList.add('visible'); });
+  }, 5000);
+})();
+</script>
+</body>
+</html>
